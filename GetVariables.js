@@ -16,21 +16,21 @@
 
             if (grTask.next()) {
                 gs.info("Registro encontradon na Tabela "+ Table +" para o registro: " + SysID);
-                var variables = grTask.variables.getElements(); // Pega todas as variáveis do catálogo
-                var arrAnswer = []; // Array para armazenar as variáveis
+                var variables = grTask.variables.getElements(); 
+                var arrAnswer = []; 
 
                
                 for (var i = 0; i < variables.length; i++) {
                     var now_V = variables[i];
 
-                    if (!now_V.isMultiRow()) { // Verifica se a variável não é multi-linha
+                    if (!now_V.isMultiRow()) {
                         var question = now_V.getQuestion();
                         var obj = {
-                            question: question.getName().toString(), // Nome da variável
-                            value: now_V.getValue(), // Valor da variável
+                            question: question.getName().toString(), 
+                            value: now_V.getValue(), 
                             isMultiRow: false
                         };
-                        arrAnswer.push(obj); // Adiciona ao array de respostas
+                        arrAnswer.push(obj); 
                     }
                 }
               
